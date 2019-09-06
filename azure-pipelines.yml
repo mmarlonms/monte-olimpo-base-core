@@ -1,0 +1,79 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+#Pack1 -------------------
+  #MonteOlimpo.Base.Core.Data
+  #MonteOlimpo.Base.Core.Domain
+  #MonteOlimpo.Base.Core.Repository
+  #MonteOlimpo.Base.Core.Specification
+
+  Pack1Version: '1.0.0'
+  Pack1PushToNuget: true
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: SonarCloudPrepare@1
+  displayName: 'Prepare analysis on SonarCloud'
+  inputs:
+    SonarCloud: 'https://sonarcloud.io/dashboard?id=MonteOlimpo.Base.Core'
+    organization: mmarlonms
+    projectKey: 'MonteOlimpo.Base.Core'
+    projectName: MonteOlimpo.Base.Core
+    extraProperties: |
+     # Additional properties that will be passed to the scanner, 
+     # Put one key=value per line, example:
+     # sonar.exclusions=**/*.bin
+
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
+
+- task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+  displayName: 'Publish Quality Gate Result'
+
+
+   # Prepare publish files
+- task: DotNetCoreCLI@2
+  displayName: Prepare Publish Files
+  inputs:
+    command: publish
+    publishWebProjects: False
+    projects: '**/**/MonteOlimpo.Base.Core.*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: False
+
+# Publish the artifacts
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifacts
+
+
