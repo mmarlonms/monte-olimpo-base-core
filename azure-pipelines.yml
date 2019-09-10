@@ -19,7 +19,7 @@ variables:
   #MonteOlimpo.Base.Core.Domain
   #MonteOlimpo.Base.Core.Specification
 
-  Pack1Version: '1.0.2'
+  Pack1Version: '1.0.3'
   Pack1PushToNuget: true
 
 steps:
