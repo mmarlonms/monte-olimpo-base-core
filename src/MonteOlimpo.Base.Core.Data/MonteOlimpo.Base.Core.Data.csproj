@@ -5,7 +5,7 @@
     <Copyright>Marlon Miranda da Silva</Copyright>
     <PackageLicenseUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mmarlonms/monte-olimpo-base-core</PackageProjectUrl>
-    <PackageIconUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/docs/monte-olimpo-base-core.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mmarlonms/monte-olimpo-base-core/master/docs/monte-olimpo-base-core.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/mmarlonms/monte-olimpo-base-core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
