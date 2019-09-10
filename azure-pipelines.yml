@@ -17,10 +17,9 @@ variables:
 #Pack1 -------------------
   #MonteOlimpo.Base.Core.Data
   #MonteOlimpo.Base.Core.Domain
-  #MonteOlimpo.Base.Core.Repository
   #MonteOlimpo.Base.Core.Specification
 
-  Pack1Version: '1.0.0'
+  Pack1Version: '1.0.2'
   Pack1PushToNuget: true
 
 steps:
@@ -31,16 +30,12 @@ steps:
     restoreSolution: '$(solution)'
 
 - task: SonarCloudPrepare@1
-  displayName: 'Prepare analysis on SonarCloud'
   inputs:
-    SonarCloud: 'https://sonarcloud.io/dashboard?id=MonteOlimpo.Base.Core'
-    organization: mmarlonms
-    projectKey: 'MonteOlimpo.Base.Core'
-    projectName: MonteOlimpo.Base.Core
-    extraProperties: |
-     # Additional properties that will be passed to the scanner, 
-     # Put one key=value per line, example:
-     # sonar.exclusions=**/*.bin
+    SonarCloud: 'sonar-monte-olimpo-base-core'
+    organization: 'mmarlonms'
+    scannerMode: 'MSBuild'
+    projectKey: 'monte-olimpo-base-core'
+    projectName: 'monte-olimpo-base-core'
 
 
 - task: VSBuild@1
@@ -54,12 +49,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: SonarCloudAnalyze@1
 
-- task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
-  displayName: 'Run Code Analysis'
-
-- task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
-  displayName: 'Publish Quality Gate Result'
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 
 
    # Prepare publish files
@@ -76,4 +70,67 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: Publish Artifacts
 
+
+###########################  Start Package 1 ###########################
+
+# Publish MonteOlimpo.Base.Core.Specification to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack MonteOlimpo.Base.Core.Specification
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/MonteOlimpo.Base.Core.Specification.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push MonteOlimpo.Base.Core.Specification to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/MonteOlimpo.Base.Core.Specification.*.nupkg'
+    publishFeedCredentials: NuggetConnect
+
+    # Publish MonteOlimpo.Base.Core.Domain to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack MonteOlimpo.Base.Core.Domain
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/MonteOlimpo.Base.Core.Domain.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push MonteOlimpo.Base.Core.Domain to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/MonteOlimpo.Base.Core.Domain.*.nupkg'
+    publishFeedCredentials: NuggetConnect
+
+
+    # Publish MonteOlimpo.Base.Core.Data to NuGet.org
+- task: DotNetCoreCLI@2
+  displayName: Pack MonteOlimpo.Base.Core.Data
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  inputs:
+    command: pack
+    packagesToPack: '**/**/MonteOlimpo.Base.Core.Data.csproj'
+    versioningScheme: byEnvVar
+    versionEnvVar: Pack1Version
+- task: NuGetCommand@2
+  displayName: Push MonteOlimpo.Base.Core.Data to NuGet.org
+  condition: eq(variables['Pack1PushToNuget'], 'True')
+  continueOnError: True
+  inputs:
+    command: push
+    nuGetFeedType: external
+    packagesToPush: '$(build.artifactStagingDirectory)/MonteOlimpo.Base.Core.Data.*.nupkg'
+    publishFeedCredentials: NuggetConnect
+
+    
+###########################  End Package 1 ###########################
 
