@@ -36,7 +36,7 @@ steps:
     organization: 'mmarlonms'
     scannerMode: 'MSBuild'
     projectKey: 'monte-olimpo-base-core'
-    projectName: 'monte-olimpo-bas-coree'
+    projectName: 'monte-olimpo-bas-core'
 
 
 - task: VSBuild@1
