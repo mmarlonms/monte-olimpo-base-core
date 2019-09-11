@@ -32,11 +32,11 @@ steps:
 
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'sonar-monte-olimpo-base'
+    SonarCloud: 'sonar-monte-olimpo-base-core'
     organization: 'mmarlonms'
     scannerMode: 'MSBuild'
-    projectKey: 'monte-olimpo-base'
-    projectName: 'monte-olimpo-base'
+    projectKey: 'monte-olimpo-base-core'
+    projectName: 'monte-olimpo-bas-coree'
 
 
 - task: VSBuild@1
