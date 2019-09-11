@@ -18,6 +18,7 @@ variables:
   #MonteOlimpo.Base.Core.Data
   #MonteOlimpo.Base.Core.Domain
   #MonteOlimpo.Base.Core.Specification
+  #MonteOlimpo.Base.Core.CrossCutting
 
   Pack1Version: '1.0.3'
   Pack1PushToNuget: false
