@@ -8,7 +8,6 @@ namespace MonteOlimpo.Base.Core.Specification
     public class BaseSpecification<T> : ISpecification<T>
     where T : ModelBase
     {
-
         private Expression<Func<T, bool>> Criteria { get; }
 
         private Func<T, bool> _function;
