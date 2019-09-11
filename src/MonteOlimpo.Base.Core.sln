@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.Data", "MonteOlimpo.Base.Core.Data\MonteOlimpo.Base.Core.Data.csproj", "{7570987E-71C5-43EE-9118-84D057A9C95F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Data", "MonteOlimpo.Base.Core.Data\MonteOlimpo.Base.Core.Data.csproj", "{7570987E-71C5-43EE-9118-84D057A9C95F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.Specification", "MonteOlimpo.Base.Core.Specification\MonteOlimpo.Base.Core.Specification.csproj", "{77E2F40D-0FC3-4FB4-AE71-5FEA7BBC26AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Specification", "MonteOlimpo.Base.Core.Specification\MonteOlimpo.Base.Core.Specification.csproj", "{77E2F40D-0FC3-4FB4-AE71-5FEA7BBC26AF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Domain", "MonteOlimpo.Base.Core.Domain\MonteOlimpo.Base.Core.Domain.csproj", "{14CEA5C9-64CE-418D-9267-D477CE66CE05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.CrossCutting", "MonteOlimpo.Base.Core.CrossCutting\MonteOlimpo.Base.Core.CrossCutting.csproj", "{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{14CEA5C9-64CE-418D-9267-D477CE66CE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14CEA5C9-64CE-418D-9267-D477CE66CE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14CEA5C9-64CE-418D-9267-D477CE66CE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

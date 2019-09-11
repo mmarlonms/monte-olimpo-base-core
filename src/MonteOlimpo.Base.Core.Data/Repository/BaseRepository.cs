@@ -50,12 +50,12 @@ namespace MonteOlimpo.Base.Core.Data.Repository
 
         public T GetBySpecification(ISpecification<T> specification)
         {
-            return this.unitOfWork.Context.Set<T>().Where(specification.Criteria).SingleOrDefault();
+            return this.unitOfWork.Context.Set<T>().Where(specification.ToExpression()).SingleOrDefault();
         }
 
         public IEnumerable<T> ListBySpecfication(ISpecification<T> specification)
         {
-            return this.unitOfWork.Context.Set<T>().Where(specification.Criteria).ToList();
+            return this.unitOfWork.Context.Set<T>().Where(specification.ToExpression()).ToList();
         }
 
         public void Update(T entity)
