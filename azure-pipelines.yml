@@ -20,7 +20,7 @@ variables:
   #MonteOlimpo.Base.Core.Specification
 
   Pack1Version: '1.0.3'
-  Pack1PushToNuget: true
+  Pack1PushToNuget: false
 
 steps:
 - task: NuGetToolInstaller@1
