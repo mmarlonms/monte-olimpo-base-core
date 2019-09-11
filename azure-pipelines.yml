@@ -18,6 +18,7 @@ variables:
   #MonteOlimpo.Base.Core.Data
   #MonteOlimpo.Base.Core.Domain
   #MonteOlimpo.Base.Core.Specification
+  #MonteOlimpo.Base.Core.CrossCutting
 
   Pack1Version: '1.0.3'
   Pack1PushToNuget: false
@@ -31,11 +32,11 @@ steps:
 
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'sonar-monte-olimpo-base'
+    SonarCloud: 'sonar-monte-olimpo-base-core'
     organization: 'mmarlonms'
     scannerMode: 'MSBuild'
-    projectKey: 'monte-olimpo-base'
-    projectName: 'monte-olimpo-base'
+    projectKey: 'monte-olimpo-base-core'
+    projectName: 'monte-olimpo-bas-core'
 
 
 - task: VSBuild@1
