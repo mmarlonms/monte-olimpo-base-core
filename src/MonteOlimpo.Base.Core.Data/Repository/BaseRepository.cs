@@ -28,7 +28,7 @@ namespace MonteOlimpo.Base.Core.Data.Repository
 
         public void Delete(T entity)
         {
-            T existing = this.unitOfWork.Context.Set<T>().Find(entity);
+            T existing = this.unitOfWork.Context.Set<T>().Find(T.Id);
             if (existing != null) this.unitOfWork.Context.Set<T>().Remove(existing);
             this.unitOfWork.Commit();
         }
