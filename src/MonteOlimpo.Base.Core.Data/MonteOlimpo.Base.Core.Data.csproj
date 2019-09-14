@@ -8,7 +8,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/mmarlonms/monte-olimpo-base-core/master/docs/monte-olimpo-base-core.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/mmarlonms/monte-olimpo-base-core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
