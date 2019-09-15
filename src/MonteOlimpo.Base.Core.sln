@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Speci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Domain", "MonteOlimpo.Base.Core.Domain\MonteOlimpo.Base.Core.Domain.csproj", "{14CEA5C9-64CE-418D-9267-D477CE66CE05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.CrossCutting", "MonteOlimpo.Base.Core.CrossCutting\MonteOlimpo.Base.Core.CrossCutting.csproj", "{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.CrossCutting", "MonteOlimpo.Base.Core.CrossCutting\MonteOlimpo.Base.Core.CrossCutting.csproj", "{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.Tests", "MonteOlimpo.Base.Core.Tests\MonteOlimpo.Base.Core.Tests.csproj", "{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.DataAnnotations", "MonteOlimpo.Base.Core.DataAnnotations\MonteOlimpo.Base.Core.DataAnnotations.csproj", "{C77350F2-A56B-42AF-B349-A3BE94E54792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.Validations", "MonteOlimpo.Base.Core.Validations\MonteOlimpo.Base.Core.Validations.csproj", "{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7BB1AFB-B7D0-4937-A7ED-7745B7364C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
