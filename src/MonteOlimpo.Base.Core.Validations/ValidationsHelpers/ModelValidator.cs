@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 
-
 namespace MonteOlimpo.Base.Core.Validations.ValidationsHelpers
 {
     public static class ModelValidator

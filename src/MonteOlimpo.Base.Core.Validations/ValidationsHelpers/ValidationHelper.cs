@@ -16,11 +16,9 @@ namespace MonteOlimpo.Base.Core.Validations.ValidationsHelpers
         {
             if (!ModelValidator.TryValidate(model, out IEnumerable<ValidationResult> errors))
             {
-                //TODO: trocar para ModelValidationException e ModelValidationError apos remover ValidationException e ValidationError
                 throw new ModelValidationException(
                     errors.Select(e =>
                         new ModelValidationError(e.ErrorKey, e.ErrorMessage)).ToArray());
-
             }
         }
     }
