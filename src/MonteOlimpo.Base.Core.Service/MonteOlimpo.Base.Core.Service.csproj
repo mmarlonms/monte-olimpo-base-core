@@ -2,11 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Copyright>Marlon Miranda da Silva</Copyright>
+    <PackageLicenseUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mmarlonms/monte-olimpo-base-core</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/mmarlonms/monte-olimpo-base-core/master/docs/monte-olimpo-base-core.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MonteOlimpo.Base.Core.Data\MonteOlimpo.Base.Core.Data.csproj" />
-    <ProjectReference Include="..\MonteOlimpo.Base.Core.Domain\MonteOlimpo.Base.Core.Domain.csproj" />
+    <PackageReference Include="MonteOlimpo.Base.Core.Domain" Version="1.0.5" />
   </ItemGroup>
 
 </Project>
