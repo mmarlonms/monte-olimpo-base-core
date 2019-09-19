@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MonteOlimpo.Base.Core.Data\MonteOlimpo.Base.Core.Data.csproj" />
+    <ProjectReference Include="..\MonteOlimpo.Base.Core.Domain\MonteOlimpo.Base.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
