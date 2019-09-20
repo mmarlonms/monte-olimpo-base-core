@@ -16,10 +16,10 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         private readonly LocalizableString _name = new LocalizableString("Name");
         private readonly LocalizableString _prompt = new LocalizableString("Prompt");
         private readonly LocalizableString _shortName = new LocalizableString("ShortName");
-        private bool? _autoGenerateField;
-        private bool? _autoGenerateFilter;
-        private int? _order;
-        private Type _resourceType;
+        private bool? autoGenerateField;
+        private bool? autoGenerateFilter;
+        private int? order;
+        private Type resourceType;
 
         #endregion
 
@@ -193,12 +193,12 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </summary>
         public Type ResourceType
         {
-            get { return _resourceType; }
+            get { return resourceType; }
             set
             {
-                if (_resourceType != value)
+                if (resourceType != value)
                 {
-                    _resourceType = value;
+                    resourceType = value;
 
                     _shortName.ResourceType = value;
                     _name.ResourceType = value;
@@ -226,16 +226,16 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         {
             get
             {
-                if (!_autoGenerateField.HasValue)
+                if (!autoGenerateField.HasValue)
                 {
                     throw new InvalidOperationException(string.Format(CultureInfo.CurrentCulture,
                         SR.DisplayAttribute_PropertyNotSet, "AutoGenerateField",
                         "GetAutoGenerateField"));
                 }
 
-                return _autoGenerateField.Value;
+                return autoGenerateField.Value;
             }
-            set { _autoGenerateField = value; }
+            set { autoGenerateField = value; }
         }
 
         /// <summary>
@@ -256,16 +256,16 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         {
             get
             {
-                if (!_autoGenerateFilter.HasValue)
+                if (!autoGenerateFilter.HasValue)
                 {
                     throw new InvalidOperationException(string.Format(CultureInfo.CurrentCulture,
                         SR.DisplayAttribute_PropertyNotSet, "AutoGenerateFilter",
                         "GetAutoGenerateFilter"));
                 }
 
-                return _autoGenerateFilter.Value;
+                return autoGenerateFilter.Value;
             }
-            set { _autoGenerateFilter = value; }
+            set { autoGenerateFilter = value; }
         }
 
         /// <summary>
@@ -284,15 +284,15 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         {
             get
             {
-                if (!_order.HasValue)
+                if (!order.HasValue)
                 {
                     throw new InvalidOperationException(string.Format(CultureInfo.CurrentCulture,
                         SR.DisplayAttribute_PropertyNotSet, "Order", "GetOrder"));
                 }
 
-                return _order.Value;
+                return order.Value;
             }
-            set { _order = value; }
+            set { order = value; }
         }
 
         #endregion
@@ -447,7 +447,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </returns>
         public bool? GetAutoGenerateField()
         {
-            return _autoGenerateField;
+            return autoGenerateField;
         }
 
         /// <summary>
@@ -461,7 +461,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </returns>
         public bool? GetAutoGenerateFilter()
         {
-            return _autoGenerateFilter;
+            return autoGenerateFilter;
         }
 
         /// <summary>
@@ -480,7 +480,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </remarks>
         public int? GetOrder()
         {
-            return _order;
+            return order;
         }
         #endregion
     }
