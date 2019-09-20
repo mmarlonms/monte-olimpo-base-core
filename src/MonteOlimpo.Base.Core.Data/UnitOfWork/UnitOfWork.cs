@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MonteOlimpo.Base.Core.Domain.UnitOfWork;
+using System;
 
 namespace MonteOlimpo.Base.Core.Data.UnitOfWork
 {
-    public class UnitOfWork<TContext> : IUnitOfWork
+    public class UnitOfWork<TContext> : IUnitOfWork, IDisposable
          where TContext : DbContext
     {
         public DbContext Context { get; set; }
