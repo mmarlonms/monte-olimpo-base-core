@@ -17,7 +17,7 @@ Base de negócio para aplicaçoes MonteOlimpo.
 	*	Referências:
 		*	 [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
 *	__MonteOlimpo.Base.Core.Data__
-	*	Apresenta a Implementação do UnitOfWork que utilizado no BaseRepository, este com as implementações básicas de um repositório (addm delete, list, getById, GetBySpecification, ListBySpecification)
+	*	Apresenta a Implementação do UnitOfWork que é utilizado no BaseRepository, este com as implementações básicas de um repositório (add, delete, list, getById, GetBySpecification, ListBySpecification)
 	*	Referências:
 		* [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
 	* Referências Externas:
@@ -44,7 +44,7 @@ Base de negócio para aplicaçoes MonteOlimpo.
 	* Referências Externas:
 		* [otc-validations](https://github.com/OleConsignado/otc-validations)
 * __MonteOlimpo.Base.Core.CrossCutting__
-	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Iunit Of Work.
+	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Unit Of Work.
 	* Referências: 
 		* [MonteOlimpo.Base.Extensions/](https://www.nuget.org/packages/MonteOlimpo.Base.Extensions/)
 		* [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
