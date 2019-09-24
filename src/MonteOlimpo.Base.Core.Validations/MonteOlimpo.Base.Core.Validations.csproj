@@ -6,10 +6,11 @@
     <PackageLicenseUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://raw.githubusercontent.com/mmarlonms/monte-olimpo-base-core/master/docs/monte-olimpo-base-core.png</PackageProjectUrl>
     <PackageIconUrl>https://github.com/mmarlonms/monte-olimpo-base-core</PackageIconUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MonteOlimpo.Base.Core.DataAnnotations" Version="1.0.3" />
+    <PackageReference Include="MonteOlimpo.Base.Core.DataAnnotations" Version="1.0.4" />
     <PackageReference Include="MonteOlimpo.Base.CoreException" Version="1.0.6" />
   </ItemGroup>
 
