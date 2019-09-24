@@ -13,7 +13,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         private readonly Dictionary<object, object> _items;
         private readonly object _objectInstance;
         private string _displayName;
-        private string _memberName;
         private Func<Type, object> _serviceProvider;
 
         #endregion
@@ -153,11 +152,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         ///     This name reflects the API name of the member being validated, not a localized name.  It should be set
         ///     only for property or parameter contexts.
         /// </value>
-        public string MemberName
-        {
-            get { return _memberName; }
-            set { _memberName = value; }
-        }
+        public string MemberName { get; set; }
 
         /// <summary>
         ///     Gets the dictionary of key/value pairs associated with this context.
@@ -185,7 +180,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
             ValidationAttributeStore store = ValidationAttributeStore.Instance;
             DisplayAttribute displayAttribute = null;
 
-            if (string.IsNullOrEmpty(_memberName))
+            if (string.IsNullOrEmpty(MemberName))
             {
                 displayAttribute = store.GetTypeDisplayAttribute(this);
             }

@@ -116,7 +116,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
                 else
                 {
                     // Get the property from the resource type for this resource key
-                    // TODO - check that GetRuntimeProperty() returns the same as old GetProperty()
                     // in all situations regardless of property modifiers
                     var property = _resourceType.GetRuntimeProperty(_propertyValue);
 
@@ -132,7 +131,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
                     else
                     {
                         // Ensure the getter for the property is available as public static
-                        // TODO - check that GetMethod returns the same as old GetGetMethod()
                         // in all situations regardless of modifiers
                         var getter = property.GetMethod;
                         if (getter == null || !(getter.IsPublic && getter.IsStatic))

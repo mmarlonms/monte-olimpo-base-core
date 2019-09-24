@@ -13,7 +13,7 @@ namespace MonteOlimpo.Base.Core.Tests
     {
         public ServiceProvider ServiceProvider { get; private set; }
 
-        public TestsFixture()
+        protected TestsFixture()
         {
             var serviceCollection = new ServiceCollection();
 

@@ -16,7 +16,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <param name="value">The value that caused the validating attribute to trigger the exception</param>
         public ValidationException(ValidationResult validationResult, ValidationAttribute validatingAttribute,
             object value)
-            : this(validationResult.ErrorMessage, validatingAttribute, value)
+            : this(validationResult.GetErrorMessage(), validatingAttribute, value)
         {
             _validationResult = validationResult;
         }

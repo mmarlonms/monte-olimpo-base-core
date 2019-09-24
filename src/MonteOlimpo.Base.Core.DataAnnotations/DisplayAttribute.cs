@@ -11,11 +11,11 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
     {
         #region Member Fields
 
-        private LocalizableString description = new LocalizableString("Description");
-        private LocalizableString groupName = new LocalizableString("GroupName");
-        private LocalizableString name = new LocalizableString("Name");
-        private LocalizableString prompt = new LocalizableString("Prompt");
-        private LocalizableString shortName = new LocalizableString("ShortName");
+        private readonly LocalizableString description = new LocalizableString("Description");
+        private readonly LocalizableString groupName = new LocalizableString("GroupName");
+        private readonly LocalizableString name = new LocalizableString("Name");
+        private readonly LocalizableString prompt = new LocalizableString("Prompt");
+        private readonly LocalizableString shortName = new LocalizableString("ShortName");
         private bool? autoGenerateField;
         private bool? autoGenerateFilter;
         private int? order;

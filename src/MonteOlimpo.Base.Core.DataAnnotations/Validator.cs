@@ -582,28 +582,23 @@ nameof(value));
 
             // Get the required validator if there is one and test it first, aborting on failure
             var required = attributes.FirstOrDefault(a => a is RequiredAttribute) as RequiredAttribute;
-            if (required != null)
+            if (required != null && !TryValidate(value, validationContext, required, out validationError))
             {
-                if (!TryValidate(value, validationContext, required, out validationError))
-                {
-                    errors.Add(validationError);
-                    return errors;
-                }
+                errors.Add(validationError);
+                return errors;
+
             }
 
             // Iterate through the rest of the validators, skipping the required validator
             foreach (var attr in attributes)
             {
-                if (attr != required)
+                if (attr != required && !TryValidate(value, validationContext, attr, out validationError))
                 {
-                    if (!TryValidate(value, validationContext, attr, out validationError))
-                    {
-                        errors.Add(validationError);
+                    errors.Add(validationError);
 
-                        if (breakOnFirstError)
-                        {
-                            break;
-                        }
+                    if (breakOnFirstError)
+                    {
+                        break;
                     }
                 }
             }

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MonteOlimpo.Base.Core.Validations.ValidationsHelpers
 {
-    public  class ValidationHelper
+    public static class ValidationHelper
     { /// <summary>
       /// Valida as propriedades do modelo informado e dispara uma ValidationException caso não seja valido.
       /// </summary>

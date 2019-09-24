@@ -154,7 +154,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         {
             private readonly IEnumerable<ValidationAttribute> _validationAttributes;
 
-            internal StoreItem(IEnumerable<Attribute> attributes)
+            protected StoreItem(IEnumerable<Attribute> attributes)
             {
                 _validationAttributes = attributes.OfType<ValidationAttribute>();
                 DisplayAttribute = attributes.OfType<DisplayAttribute>().SingleOrDefault();

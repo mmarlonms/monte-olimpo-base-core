@@ -26,7 +26,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
 
         private readonly IEnumerable<string> _memberNames;
         private string _errorMessage;
-        private string _errorKey;
 
         #endregion
 
@@ -64,7 +63,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
 
             if (_memberNames.Any())
             {
-                _errorKey = string.Join(", ", _memberNames.OrderBy(m => m));
+                ErrorKey = string.Join(", ", _memberNames.OrderBy(m => m));
             }
         }
 
@@ -88,7 +87,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         {
             if (errorKey != null)
             {
-                _errorKey = errorKey;
+                ErrorKey = errorKey;
             }
         }
 
@@ -106,7 +105,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
 
             _errorMessage = validationResult._errorMessage;
             _memberNames = validationResult._memberNames;
-            _errorKey = validationResult._errorKey;
+            ErrorKey = validationResult.ErrorKey;
         }
 
         #endregion
@@ -124,20 +123,20 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <summary>
         ///     Gets the error message for this result.  It may be null.
         /// </summary>
-        public string ErrorMessage
-        {
-            get { return _errorMessage; }
-            set { _errorMessage = value; }
-        }
+        public string GetErrorMessage()
+
+        { return _errorMessage; }
+
+        /// <summary>
+        ///     Gets the error message for this result.  It may be null.
+        /// </summary>
+        public void SetErrorMessage(string value)
+        { _errorMessage = value; }
 
         /// <summary>
         ///     Gets the error key for this result.  It may be null.
         /// </summary>
-        public string ErrorKey
-        {
-            get { return _errorKey; }
-            set { _errorKey = value; }
-        }
+        public string ErrorKey { get; set; }
 
         #endregion
 
@@ -145,20 +144,20 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
 
         /// <summary>
         ///     Override the string representation of this instance, returning
-        ///     the <see cref="ErrorMessage" /> if not <c>null</c>, otherwise
+        ///     the <see cref="GetErrorMessage()" /> if not <c>null</c>, otherwise
         ///     the base <see cref="Object.ToString" /> result.
         /// </summary>
         /// <remarks>
-        ///     If the <see cref="ErrorMessage" /> is empty, it will still qualify
+        ///     If the <see cref="GetErrorMessage()" /> is empty, it will still qualify
         ///     as being specified, and therefore returned from <see cref="ToString" />.
         /// </remarks>
         /// <returns>
-        ///     The <see cref="ErrorMessage" /> property value if specified,
+        ///     The <see cref="GetErrorMessage()" /> property value if specified,
         ///     otherwise, the base <see cref="Object.ToString" /> result.
         /// </returns>
         public override string ToString()
         {
-            return ErrorMessage ?? base.ToString();
+            return GetErrorMessage() ?? base.ToString();
         }
         #endregion Methods
     }

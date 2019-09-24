@@ -405,7 +405,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <remarks>
         ///     If this method returns <see cref="ValidationResult.Success" />, then validation was successful, otherwise
         ///     an instance of <see cref="ValidationResult" /> will be returned with a guaranteed non-null
-        ///     <see cref="ValidationResult.ErrorMessage" />.
+        ///     <see cref="ValidationResult.GetErrorMessage()" />.
         /// </remarks>
         /// <param name="value">The value to validate</param>
         /// <param name="validationContext">
@@ -434,13 +434,10 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
             var result = IsValid(value, validationContext);
 
             // If validation fails, we want to ensure we have a ValidationResult that guarantees it has an ErrorMessage
-            if (result != null)
+            if (result != null && string.IsNullOrEmpty(result.GetErrorMessage()))
             {
-                if (string.IsNullOrEmpty(result.ErrorMessage))
-                {
-                    var errorMessage = FormatErrorMessage(validationContext.DisplayName);
-                    result = new ValidationResult(errorMessage, result.MemberNames);
-                }
+                var errorMessage = FormatErrorMessage(validationContext.DisplayName);
+                result = new ValidationResult(errorMessage, result.MemberNames);
             }
 
             return result;
