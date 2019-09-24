@@ -17,7 +17,7 @@ Base de negócio para aplicaçoes MonteOlimpo.
 	*	Referências:
 		*	 [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
 *	__MonteOlimpo.Base.Core.Data__
-	*	Apresenta a Implementação do UnitOfWork que utilizado no BaseRepository, este com as implementações básicas de um repositório (addm delete, list, getById, GetBySpecification, ListBySpecification)
+	*	Apresenta a Implementação do UnitOfWork que é utilizado no BaseRepository, este com as implementações básicas de um repositório (add, delete, list, getById, GetBySpecification, ListBySpecification)
 	*	Referências:
 		* [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
 	* Referências Externas:
@@ -44,13 +44,13 @@ Base de negócio para aplicaçoes MonteOlimpo.
 	* Referências Externas:
 		* [otc-validations](https://github.com/OleConsignado/otc-validations)
 * __MonteOlimpo.Base.Core.CrossCutting__
-	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Iunit Of Work.
+	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Unit Of Work.
 	* Referências: 
 		* [MonteOlimpo.Base.Extensions/](https://www.nuget.org/packages/MonteOlimpo.Base.Extensions/)
 		* [MonteOlimpo.Base.Core.Domain/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Domain/)
 		* [MonteOlimpo.Base.Core.Data/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Data/)
 * __MonteOlimpo.Base.Core.Tests__
-	* Apresenta a solução para testes integrados através do __TestsFixture__, este adiciona um contexto em mória para os testes, no qual se torna possível utilizar o IoC desde a camada de serviço até a camada de repositório, ganhando performance maior assertividade nos testes, além de, __não precisar de utilziar mocs ou fakes para o banco de dados ou repositório__. Obs.: Recomendado para testes de negocio e integração por se tratar de um baco de dados em memoria. 
+	* Apresenta a solução para testes integrados através do __TestsFixture__, este adiciona um contexto em memória para os testes, no qual se torna possível utilizar o IoC desde a camada de serviço até a camada de repositório, ganhando performance maior assertividade nos testes, além de, __não precisar de utilziar mocs ou fakes para o banco de dados ou repositório__. Obs.: Recomendado para testes de negocio e integração por se tratar de um baco de dados em memoria. 
 	* Referências: 
 		* [MonteOlimpo.Base.Core.DataAnnotations/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.DataAnnotations/)	
 		*  [MonteOlimpo.Base.CoreException/](https://www.nuget.org/packages/MonteOlimpo.Base.CoreException/)
