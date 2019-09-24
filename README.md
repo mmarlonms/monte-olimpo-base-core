@@ -52,8 +52,8 @@ Base de negócio para aplicaçoes MonteOlimpo.
 * __MonteOlimpo.Base.Core.Tests__
 	* Apresenta a solução para testes integrados através do __TestsFixture__, este adiciona um contexto em memória para os testes, no qual se torna possível utilizar o IoC desde a camada de serviço até a camada de repositório, ganhando performance maior assertividade nos testes, além de, __não precisar de utilziar mocs ou fakes para o banco de dados ou repositório__. Obs.: Recomendado para testes de negocio e integração por se tratar de um baco de dados em memoria. 
 	* Referências: 
-		* [MonteOlimpo.Base.Core.DataAnnotations/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.DataAnnotations/)	
-		*  [MonteOlimpo.Base.CoreException/](https://www.nuget.org/packages/MonteOlimpo.Base.CoreException/)
+		* [MonteOlimpo.Base.Core.Data/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.Data/)	
+		*  [MonteOlimpo.Base.Extensions/](https://www.nuget.org/packages/MonteOlimpo.Base.Extensions/)
 
 ## Nuget details
 |Packages|Version & Downloads|
