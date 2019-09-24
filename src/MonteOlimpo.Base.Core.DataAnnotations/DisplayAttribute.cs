@@ -11,11 +11,11 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
     {
         #region Member Fields
 
-        private LocalizableString _description = new LocalizableString("Description");
-        private LocalizableString _groupName = new LocalizableString("GroupName");
-        private LocalizableString _name = new LocalizableString("Name");
-        private LocalizableString _prompt = new LocalizableString("Prompt");
-        private LocalizableString _shortName = new LocalizableString("ShortName");
+        private LocalizableString description = new LocalizableString("Description");
+        private LocalizableString groupName = new LocalizableString("GroupName");
+        private LocalizableString name = new LocalizableString("Name");
+        private LocalizableString prompt = new LocalizableString("Prompt");
+        private LocalizableString shortName = new LocalizableString("ShortName");
         private bool? autoGenerateField;
         private bool? autoGenerateFilter;
         private int? order;
@@ -50,8 +50,8 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </value>
         public string ShortName
         {
-            get { return _shortName.Value; }
-            set { _shortName.Value = value;}
+            get { return shortName.Value; }
+            set { shortName.Value = value;}
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </value>
         public string Name
         {
-            get { return _name.Value; }
-            set { _name.Value = value; }
+            get { return name.Value; }
+            set { name.Value = value; }
         }
 
         /// <summary>
@@ -100,8 +100,8 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </value>
         public string Description
         {
-            get { return _description.Value; }
-            set { _description.Value = value; }
+            get { return description.Value; }
+            set { description.Value = value; }
         }
 
 
@@ -126,9 +126,9 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </value>
         public string Prompt
         {
-            get { return _prompt.Value; }
+            get { return prompt.Value; }
             set
-            { _prompt.Value = value; }
+            { prompt.Value = value; }
         }
 
         /// <summary>
@@ -152,8 +152,8 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </value>
         public string GroupName
         {
-            get { return _groupName.Value; }
-            set { _groupName.Value = value; }
+            get { return groupName.Value; }
+            set { groupName.Value = value; }
         }
 
         /// <summary>
@@ -172,11 +172,11 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
                 {
                     resourceType = value;
 
-                    _shortName.ResourceType = value;
-                    _name.ResourceType = value;
-                    _description.ResourceType = value;
-                    _prompt.ResourceType = value;
-                    _groupName.ResourceType = value;
+                    shortName.ResourceType = value;
+                    name.ResourceType = value;
+                    description.ResourceType = value;
+                    prompt.ResourceType = value;
+                    groupName.ResourceType = value;
                 }
             }
         }
@@ -297,7 +297,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </exception>
         public string GetShortName()
         {
-            return _shortName.GetLocalizableValue() ?? GetName();
+            return shortName.GetLocalizableValue() ?? GetName();
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </exception>
         public string GetName()
         {
-            return _name.GetLocalizableValue();
+            return name.GetLocalizableValue();
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </exception>
         public string GetDescription()
         {
-            return _description.GetLocalizableValue();
+            return description.GetLocalizableValue();
         }
 
         /// <summary>
@@ -379,7 +379,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </exception>
         public string GetPrompt()
         {
-            return _prompt.GetLocalizableValue();
+            return prompt.GetLocalizableValue();
         }
 
         /// <summary>
@@ -405,7 +405,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </exception>
         public string GetGroupName()
         {
-            return _groupName.GetLocalizableValue();
+            return groupName.GetLocalizableValue();
         }
 
         /// <summary>
