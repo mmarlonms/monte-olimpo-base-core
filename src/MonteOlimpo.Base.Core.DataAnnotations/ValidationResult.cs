@@ -25,7 +25,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         public static readonly ValidationResult Success;
 
         private readonly IEnumerable<string> _memberNames;
-        private string _errorMessage;
 
         #endregion
 
@@ -58,7 +57,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// </param>
         public ValidationResult(string errorMessage, IEnumerable<string> memberNames)
         {
-            _errorMessage = errorMessage;
+            ErrorMessage = errorMessage;
             _memberNames = memberNames ?? Array.Empty<string>();
 
             if (_memberNames.Any())
@@ -103,7 +102,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
                 throw new ArgumentNullException(nameof(validationResult));
             }
 
-            _errorMessage = validationResult._errorMessage;
+            ErrorMessage = validationResult.ErrorMessage;
             _memberNames = validationResult._memberNames;
             ErrorKey = validationResult.ErrorKey;
         }
@@ -123,15 +122,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <summary>
         ///     Gets the error message for this result.  It may be null.
         /// </summary>
-        public string GetErrorMessage()
-
-        { return _errorMessage; }
-
-        /// <summary>
-        ///     Gets the error message for this result.  It may be null.
-        /// </summary>
-        public void SetErrorMessage(string value)
-        { _errorMessage = value; }
+        public string ErrorMessage { get; set; }
 
         /// <summary>
         ///     Gets the error key for this result.  It may be null.
@@ -144,20 +135,20 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
 
         /// <summary>
         ///     Override the string representation of this instance, returning
-        ///     the <see cref="GetErrorMessage()" /> if not <c>null</c>, otherwise
+        ///     the <see cref="ErrorMessage" /> if not <c>null</c>, otherwise
         ///     the base <see cref="Object.ToString" /> result.
         /// </summary>
         /// <remarks>
-        ///     If the <see cref="GetErrorMessage()" /> is empty, it will still qualify
+        ///     If the <see cref="ErrorMessage" /> is empty, it will still qualify
         ///     as being specified, and therefore returned from <see cref="ToString" />.
         /// </remarks>
         /// <returns>
-        ///     The <see cref="GetErrorMessage()" /> property value if specified,
+        ///     The <see cref="ErrorMessage" /> property value if specified,
         ///     otherwise, the base <see cref="Object.ToString" /> result.
         /// </returns>
         public override string ToString()
         {
-            return GetErrorMessage() ?? base.ToString();
+            return ErrorMessage ?? base.ToString();
         }
         #endregion Methods
     }

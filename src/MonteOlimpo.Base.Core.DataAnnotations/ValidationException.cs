@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace MonteOlimpo.Base.Core.DataAnnotations
 {
@@ -16,7 +15,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <param name="value">The value that caused the validating attribute to trigger the exception</param>
         public ValidationException(ValidationResult validationResult, ValidationAttribute validatingAttribute,
             object value)
-            : this(validationResult.GetErrorMessage(), validatingAttribute, value)
+            : this(validationResult.ErrorMessage, validatingAttribute, value)
         {
             _validationResult = validationResult;
         }
@@ -61,10 +60,6 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <param name="innerException">inner exception</param>
         public ValidationException(string message, Exception innerException)
             : base(message, innerException)
-        {
-        }
-
-            protected ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 

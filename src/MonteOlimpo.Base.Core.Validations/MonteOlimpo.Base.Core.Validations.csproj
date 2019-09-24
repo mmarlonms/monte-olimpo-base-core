@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MonteOlimpo.Base.Core.DataAnnotations" Version="1.0.2" />
-    <PackageReference Include="MonteOlimpo.Base.CoreException" Version="1.0.5" />
+    <PackageReference Include="MonteOlimpo.Base.Core.DataAnnotations" Version="1.0.3" />
+    <PackageReference Include="MonteOlimpo.Base.CoreException" Version="1.0.6" />
   </ItemGroup>
 
 </Project>

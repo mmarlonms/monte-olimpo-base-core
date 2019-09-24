@@ -18,7 +18,7 @@ namespace MonteOlimpo.Base.Core.Validations.ValidationsHelpers
             {
                 throw new ModelValidationException(
                     errors.Select(e =>
-                        new ModelValidationError(e.ErrorKey, e.ErrorMessage)).ToArray());
+                        new ModelValidationError(e.ErrorKey, e.GetErrorMessage())).ToArray());
             }
         }
     }

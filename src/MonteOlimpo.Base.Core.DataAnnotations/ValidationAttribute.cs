@@ -248,23 +248,20 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
             {
                 var property = _errorMessageResourceType
                     .GetTypeInfo().GetDeclaredProperty(_errorMessageResourceName);
-
-                if (property != null )
+                if (property != null && !ValidationAttributeStore.IsStatic(property))
                 {
-                    if (!ValidationAttributeStore.IsStatic(property))
-                    {
-                        property = null;
-                    }
-                    else
-                    {
-                        var propertyGetter = property.GetMethod;
+                    property = null;
+                }
 
-                        // We only support internal and public properties
-                        if (propertyGetter == null || (!propertyGetter.IsAssembly && !propertyGetter.IsPublic))
-                        {
-                            // Set the property to null so the exception is thrown as if the property wasn't found
-                            property = null;
-                        }
+                if (property != null)
+                {
+                    var propertyGetter = property.GetMethod;
+
+                    // We only support internal and public properties
+                    if (propertyGetter == null || (!propertyGetter.IsAssembly && !propertyGetter.IsPublic))
+                    {
+                        // Set the property to null so the exception is thrown as if the property wasn't found
+                        property = null;
                     }
                 }
 
@@ -408,7 +405,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <remarks>
         ///     If this method returns <see cref="ValidationResult.Success" />, then validation was successful, otherwise
         ///     an instance of <see cref="ValidationResult" /> will be returned with a guaranteed non-null
-        ///     <see cref="ValidationResult.GetErrorMessage()" />.
+        ///     <see cref="ValidationResult.ErrorMessage" />.
         /// </remarks>
         /// <param name="value">The value to validate</param>
         /// <param name="validationContext">
@@ -437,7 +434,7 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
             var result = IsValid(value, validationContext);
 
             // If validation fails, we want to ensure we have a ValidationResult that guarantees it has an ErrorMessage
-            if (result != null && string.IsNullOrEmpty(result.GetErrorMessage()))
+            if (result != null && string.IsNullOrEmpty(result.ErrorMessage))
             {
                 var errorMessage = FormatErrorMessage(validationContext.DisplayName);
                 result = new ValidationResult(errorMessage, result.MemberNames);
