@@ -248,20 +248,23 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
             {
                 var property = _errorMessageResourceType
                     .GetTypeInfo().GetDeclaredProperty(_errorMessageResourceName);
-                if (property != null && !ValidationAttributeStore.IsStatic(property))
-                {
-                    property = null;
-                }
 
-                if (property != null)
+                if (property != null )
                 {
-                    var propertyGetter = property.GetMethod;
-
-                    // We only support internal and public properties
-                    if (propertyGetter == null || (!propertyGetter.IsAssembly && !propertyGetter.IsPublic))
+                    if (!ValidationAttributeStore.IsStatic(property))
                     {
-                        // Set the property to null so the exception is thrown as if the property wasn't found
                         property = null;
+                    }
+                    else
+                    {
+                        var propertyGetter = property.GetMethod;
+
+                        // We only support internal and public properties
+                        if (propertyGetter == null || (!propertyGetter.IsAssembly && !propertyGetter.IsPublic))
+                        {
+                            // Set the property to null so the exception is thrown as if the property wasn't found
+                            property = null;
+                        }
                     }
                 }
 

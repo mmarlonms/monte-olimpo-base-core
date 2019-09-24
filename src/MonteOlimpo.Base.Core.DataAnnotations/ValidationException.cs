@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Runtime.Serialization;
 
 namespace MonteOlimpo.Base.Core.DataAnnotations
 {
+    [Serializable]
     public class ValidationException : Exception
     {
         private ValidationResult _validationResult;
@@ -61,6 +61,10 @@ namespace MonteOlimpo.Base.Core.DataAnnotations
         /// <param name="innerException">inner exception</param>
         public ValidationException(string message, Exception innerException)
             : base(message, innerException)
+        {
+        }
+
+            protected ValidationException(SerializationInfo info, StreamingContext context) : base(info, context)
         {
         }
 
