@@ -21,6 +21,7 @@ namespace MonteOlimpo.Base.Core.Data.UnitOfWork
         public void Dispose()
         {
             Context.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }
