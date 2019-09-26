@@ -2,11 +2,8 @@
 
 ![Logo](https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/docs/monte-olimpo-base-core.png)
 
-# Monte Olimpo - Base Core [Projeto em Desenvolvimento]
-Base de negócio para aplicaçoes MonteOlimpo.
 
-
-# Monte Olimpo - Base Core [Projeto em Desenvolvimento]
+# Monte Olimpo - Base Core 
 Base de negócio para aplicaçoes MonteOlimpo.
 
 * __MonteOlimpo.Base.Core.Domain__
