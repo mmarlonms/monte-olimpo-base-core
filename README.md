@@ -42,7 +42,7 @@ Base de negócio para aplicaçoes MonteOlimpo.
 	* Referências Externas:
 		* [otc-validations](https://github.com/OleConsignado/otc-validations)
 
-Obs.: Pacote descontinuado devido a alteração no tratamento da validação dos models pelo [Fluent Validation]([https://www.carlrippon.com/fluentvalidation-in-an-asp-net-core-web-api/](https://www.carlrippon.com/fluentvalidation-in-an-asp-net-core-web-api/)) e incorporados no projeto __Monte Olimpo Base__ através de filtros MVC.
+Obs.: Pacote descontinuado devido a alteração no tratamento da validação dos models pelo [Fluent Validation](https://www.carlrippon.com/fluentvalidation-in-an-asp-net-core-web-api/) que foram incorporados no projeto __Monte Olimpo Base__ através de filtros MVC.
 
 * __MonteOlimpo.Base.Core.CrossCutting__
 	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Unit Of Work.
