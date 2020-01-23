@@ -1,3 +1,4 @@
+
 [![Build Status](https://dev.azure.com/MMarlonMs/MonteOlimpo/_apis/build/status/mmarlonms.monte-olimpo-base-core)](https://dev.azure.com/MMarlonMs/MonteOlimpo/_build/latest?definitionId=1)
 
 ![Logo](https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/docs/monte-olimpo-base-core.png)
@@ -33,13 +34,16 @@ Base de negócio para aplicaçoes MonteOlimpo.
 			* [otc-annotations](https://github.com/OleConsignado/otc-annotations)
 			* [System.ComponentModel.Annotations](https://github.com/dotnet/corefx/tree/v1.1.8/src/System.ComponentModel.Annotations)
 			* [# Validação de modelo no ASP.NET Core MVC](https://docs.microsoft.com/pt-br/aspnet/core/mvc/models/validation?view=aspnetcore-2.2)
-* __MonteOlimpo.Base.Core.Validations__
+* ~~__MonteOlimpo.Base.Core.Validations__~~
 	* Apresenta a classe __ValidationHelper__ que valida um model com base nas annotations (MonteOlimpo.Base.Core.DataAnnotations)
 	* Referências: 
 		* [MonteOlimpo.Base.Core.DataAnnotations/](https://www.nuget.org/packages/MonteOlimpo.Base.Core.DataAnnotations/)
 		* [MonteOlimpo.Base.CoreException/](https://www.nuget.org/packages/MonteOlimpo.Base.CoreException/)
 	* Referências Externas:
 		* [otc-validations](https://github.com/OleConsignado/otc-validations)
+
+Obs.: Pacote descontinuado devido a alteração no tratamento da validação dos models pelo [Fluent Validation](https://www.carlrippon.com/fluentvalidation-in-an-asp-net-core-web-api/) que foram incorporados no projeto __Monte Olimpo Base__ através de filtros MVC.
+
 * __MonteOlimpo.Base.Core.CrossCutting__
 	* Apresenta a classe __RegisterMonteOlimpoBaseCore__ no qual tem como função configurar o contexto, o tipo banco e o Unit Of Work.
 	* Referências: 
