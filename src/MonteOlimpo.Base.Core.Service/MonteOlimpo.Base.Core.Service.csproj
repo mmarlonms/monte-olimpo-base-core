@@ -1,15 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <Copyright>Marlon Miranda da Silva</Copyright>
     <PackageLicenseUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mmarlonms/monte-olimpo-base-core</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/mmarlonms/monte-olimpo-base-core/master/docs/monte-olimpo-base-core.png</PackageIconUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <Version>3.0.0</Version>
+    <PackageIcon>monte-olimpo-base-core.png</PackageIcon>
+    <RepositoryUrl>https://github.com/mmarlonms/monte-olimpo-base-core</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>suport  .net core 3.1</PackageReleaseNotes>
+    <AssemblyVersion>3.0.0.1</AssemblyVersion>
+    <FileVersion>3.0.0.1</FileVersion>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MonteOlimpo.Base.Core.Domain" Version="1.0.5" />
+    <None Include="..\..\docs\monte-olimpo-base-core.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonteOlimpo.Base.Core.Domain" Version="3.0.5" />
   </ItemGroup>
 
 </Project>
