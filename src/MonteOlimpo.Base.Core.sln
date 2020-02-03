@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Data", "MonteOlimpo.Base.Core.Data\MonteOlimpo.Base.Core.Data.csproj", "{7570987E-71C5-43EE-9118-84D057A9C95F}"
 EndProject
@@ -13,11 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Cross
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Tests", "MonteOlimpo.Base.Core.Tests\MonteOlimpo.Base.Core.Tests.csproj", "{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.DataAnnotations", "MonteOlimpo.Base.Core.DataAnnotations\MonteOlimpo.Base.Core.DataAnnotations.csproj", "{C77350F2-A56B-42AF-B349-A3BE94E54792}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Validations", "MonteOlimpo.Base.Core.Validations\MonteOlimpo.Base.Core.Validations.csproj", "{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonteOlimpo.Base.Core.Service", "MonteOlimpo.Base.Core.Service\MonteOlimpo.Base.Core.Service.csproj", "{505A94AB-ED19-4B57-9D60-C28E1F82C718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonteOlimpo.Base.Core.Service", "MonteOlimpo.Base.Core.Service\MonteOlimpo.Base.Core.Service.csproj", "{505A94AB-ED19-4B57-9D60-C28E1F82C718}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +43,6 @@ Global
 		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB1A8FF-1660-4C15-A9ED-4DF89D522AA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C77350F2-A56B-42AF-B349-A3BE94E54792}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F375AA-0181-44B1-9098-3ADB5AFEB5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU

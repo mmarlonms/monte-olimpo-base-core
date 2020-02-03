@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Copyright>Marlon Miranda da Silva</Copyright>
     <PackageLicenseUrl>https://github.com/mmarlonms/monte-olimpo-base-core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/mmarlonms/monte-olimpo-base-core</PackageProjectUrl>
@@ -10,14 +10,15 @@
     <RepositoryType>Git</RepositoryType>
     <Version>3.0.5</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>suport  .net core 3.1</PackageReleaseNotes>
-    <AssemblyVersion>3.0.5.1</AssemblyVersion>
-    <FileVersion>3.0.5.1</FileVersion>
+    <PackageReleaseNotes>suport  .net standart 2.1</PackageReleaseNotes>
+    <AssemblyVersion>3.0.0.5</AssemblyVersion>
+    <FileVersion>3.0.0.5</FileVersion>
     <PackageIcon>monte-olimpo-base-core.png</PackageIcon>
+    <PackageTags>2.1</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MonteOlimpo.Base.Core.Domain" Version="1.0.5" />
+    <PackageReference Include="MonteOlimpo.Base.Core.Domain" Version="3.0.5" />
   </ItemGroup>
 
   <ItemGroup>
